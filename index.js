@@ -5,7 +5,7 @@ var app = express();
 app.set('view engine', 'ejs');
 app.set('port', process.env.PORT || 3000)
 app.set('views', './views/routes/');
-
+app.use( express.static( "public" ) );
 
 //Routs
 app.get('/', function(req, res) 
@@ -24,11 +24,15 @@ app.get('/projects', function(req, res)
 });
 app.get('/services', function(req, res) 
 {
-    res.render('contact.ejs')
+    res.render('services.ejs')
 });
 app.get('/contact', function(req, res) 
 {
     res.render('contact.ejs')
+});
+app.get('/resume', function(req, res) 
+{
+    res.render('resume.pdf')
 });
 
 
