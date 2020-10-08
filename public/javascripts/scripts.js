@@ -1,10 +1,11 @@
 /*!
-    * Start Bootstrap - Agency v6.0.2 (https://startbootstrap.com/template-overviews/agency)
-    * Copyright 2013-2020 Start Bootstrap
-    * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-agency/blob/master/LICENSE)
-    */
+* scripts.js
+* Adapted by Victor Chaparro
+* Studen ID: 301140944
+* Oct - 05 - 2020
+*/
     (function ($) {
-    "use strict"; // Start of use strict
+    "use strict"; 
 
     // Smooth scrolling using jQuery easing
     $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
@@ -54,3 +55,18 @@
     // Collapse the navbar when page is scrolled
     $(window).scroll(navbarCollapse);
 })(jQuery); // End of use strict
+
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}

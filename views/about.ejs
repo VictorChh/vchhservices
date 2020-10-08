@@ -1,15 +1,23 @@
+<!--
+* about.ejs 
+* Created by Victor Chaparro
+* Studen ID: 301140944
+* Oct - 05 - 2020
+* This partial ejs file includes information about Victor Chaparro
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('../partials/head'); %>
+    <!-- including head partial-->
+    <%- include('partials/head'); %>
 </head>
 <body class="container">
-
+<!-- including header partial-->
 <header>
-    <%- include('../partials/header'); %>
+    <%- include('partials/header'); %>
 </header>
 
-<!-- Team-->
+<!-- About me section-->
 <section class="page-section bg-light" id="team">
     <div class="container">
         <div class="text-center">
@@ -41,8 +49,9 @@
         
     </div>
 </section>
+<!-- including footer partial-->
 <footer>
-    <%- include('../partials/footer'); %>
+    <%- include('partials/footer'); %>
 </footer>
 
 </body>

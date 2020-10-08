@@ -1,0 +1,87 @@
+<!--
+* index.ejs 
+* Created by Victor Chaparro
+* Studen ID: 301140944
+* Oct - 05 - 2020
+* This section includes the home page and allows to access the main sections in the web
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('partials/header'); %>
+</header>
+
+<!-- Home Grid-->
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <header class="masthead">
+            <div class="container col-md-9">
+                <div class="masthead-subheading text-secondary">About Us</div>
+                <div class="text-secondary">VC Consultancy Services has the mission of accelerating the growth of your company by taking advantage of technology and information. We specialize in small and medium-sized companies with high potential.
+                    <br>
+                    Learn about our services and discover how we can help. Book an appointment and one of our professionals will visit you for a totally free consulting session</div>
+                    <br><br>
+                    <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="about">Tell Me More</a>
+            </div>
+        </header>
+      </div>
+      <div class="carousel-item">
+        <header class="masthead">
+            <div class="container col-md-9">
+                <div class="masthead-subheading text-secondary">Our Services</div>
+                <div class="text-secondary">VC Consulting Services provides you with the complete support that your company needs. From the design and planning of your project to the start-up and support to the operation. We have the best professionals in each of the areas.
+                    <br><br>
+                    <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="services">Tell Me More</a>
+            </div>
+        </header>
+      </div>
+      <div class="carousel-item">
+        <header class="masthead">
+            <div class="container col-md-9">
+                <div class="masthead-subheading text-secondary">Projects</div>
+                <div class="text-secondary">
+                    Learn about some of the projects we have implemented for our clients, who have achieved significant improvements. Hear what they have to say about us and our services.
+                    <br><br>
+                    <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="projects">Tell Me More</a>
+            </div>
+        </header>
+      </div>
+      <div class="carousel-item">
+        <header class="masthead">
+            <div class="container col-md-9">
+                <div class="masthead-subheading text-secondary">Contact us</div>
+                <div class="text-secondary">
+                    Call us or leave us a message and you will immediately receive a response from an advisor who will schedule an appointment for a completely free consulting session.<br><br>
+                    <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="contact">Tell Me More</a>
+            </div>
+        </header>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+<footer>
+    <%- include('partials/footer'); %>
+</footer>
+
+</body>
+</html>

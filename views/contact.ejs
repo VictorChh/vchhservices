@@ -1,21 +1,31 @@
+
+<!--
+* contact.ejs 
+* Created by Victor Chaparro
+* Studen ID: 301140944
+* Oct - 05 - 2020
+* This section includes contact information, as well as a simple form to send a message
+-->>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('../partials/head'); %>
+    <!-- including head partial-->
+    <%- include('partials/head'); %>
 </head>
 <body class="container">
 
 <header>
-    <%- include('../partials/header'); %>
+    <!-- including header partial-->
+    <%- include('partials/header'); %>
 </header>
-
+<!-- Contact Us section-->
 <main>
     <div class="jumbotron">
         
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Contact Us</h2>
-                <h6 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h6>
+                <h6 class="section-subheading text-muted">.</h6>
             </div>
             <br><br>
             <form id="contactForm" name="sentMessage" novalidate="novalidate">
@@ -51,7 +61,8 @@
 </main>
 
 <footer>
-    <%- include('../partials/footer'); %>
+    <!-- including footer partial-->
+    <%- include('partials/footer'); %>
 </footer>
 
 </body>
