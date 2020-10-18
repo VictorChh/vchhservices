@@ -1,8 +1,6 @@
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
-const book = require('../models/book');
-
 
 //Connect with our Book Model
 let contact = require('../models/contactl');
@@ -27,7 +25,7 @@ router.get('/', (req, res, next) => {
 
 // GET route for dislay the Add page - Create opperation
 router.get('/add', (req, res, next) => {
-    res.render('contact/add', {title: 'Add Contact'})
+    res.render('contacts/add', {title: 'Add Contact'})
 });
 
 // POST route for processing the Add page - Create opperation
@@ -47,7 +45,7 @@ router.post('/add', (req, res, next) => {
         else
         {
             //refresh contact list
-            res.redirect('/list');        
+            res.redirect('/contactlist');        
         }
 
     });
@@ -65,7 +63,7 @@ router.get('/edit/:id', (req, res, next) => {
         }
         else
         {
-            res.render('book/edit', {title: 'Edit contact', contact: contacttoEdit})
+            res.render('contacts/edit', {title: 'Edit contact', contact: contacttoEdit})
         }
     });
 });
@@ -74,12 +72,13 @@ router.get('/edit/:id', (req, res, next) => {
 router.post('/edit/:id', (req, res, next) => {
     let id = req.params.id
     let updatedContact = contact({
+        "_id": id,
         "name": req.body.name,
         "contactnumber": req.body.contactnumber,
         "email": req.body.email
     })
 
-    book.updateOne({_id: id}, upcatedContact, (err) => {
+    contact.updateOne({_id: id}, updatedContact, (err) => {
         if(err)
         {
             console.log(err);
@@ -88,7 +87,9 @@ router.post('/edit/:id', (req, res, next) => {
         else
         {
             //refresh contact list
-            res.redirect('/contactlist');        
+            res.redirect('/contactlist');
+            console.log(id);
+            console.log(updatedContact);        
         }
     })
 });

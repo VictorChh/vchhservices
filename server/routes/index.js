@@ -32,4 +32,8 @@ router.get('/contact', function(req, res, next) {
 });
 /* GET Contact Us page. */
 
+router.get('/add', (req, res, next) => {
+  res.render('add', {title: 'Add Contact'})
+});
+
 module.exports = router;

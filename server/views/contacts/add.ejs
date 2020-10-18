@@ -1,0 +1,68 @@
+
+<!--
+* contacts/add.ejs 
+* Created by Victor Chaparro
+* Studen ID: 301140944
+* Oct - 05 - 2020
+* This section includes a functional form to add a new contact
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- including head partial-->
+    <%- include('../partials/head.ejs'); %>
+</head>
+<body class="container">
+
+<header>
+    <!-- including header partial-->
+    <%- include('../partials/header.ejs'); %>
+</header>
+<!-- Contact Us section-->
+<main>
+    <div class="container">
+        <br><br>
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase"><%- title %></h2>
+        </div>
+        <br><br>
+        <div class="row">
+            <!-- Form -->
+            <div class="offset-md-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/contactlist/add" method="POST">
+                            <div class="form-group">
+                                <label for="contactname">Contact name:</label>
+                                <input type="text" name="name" placeholder="Insert the contact name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactnumber">Contact number:</label>
+                                <input type="text" name="contactnumber" placeholder="Insert the contact number" class="form-control" required>
+                            </div>
+                            <label for="">Contact email:</label>
+                            <div class="form-group">
+                                <input type="text" name="email" placeholder="Insert the contact email" class="form-control" required>
+                            </div>
+                            <div class="form-group">    
+                                <button type="submit" class="btn btn-secondary"><i class="fas fa-edit"></i> Submitt</button>   
+                                <a href="/contactlist" class="btn btn-secondary"><i class="fas fa-undo"></i> Cancel</a>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br><br>
+</main>
+
+<footer>
+    <!-- including footer partial-->
+    <%- include('../partials/footer.ejs'); %>
+</footer>
+
+</body>
+</html>
