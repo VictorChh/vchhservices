@@ -1,0 +1,58 @@
+<!--
+* about.ejs 
+* Created by Victor Chaparro
+* Studen ID: 301140944
+* Oct - 05 - 2020
+* This partial ejs file includes information about Victor Chaparro
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- including head partial-->
+    <%- include('partials/head'); %>
+</head>
+<body class="container">
+<!-- including header partial-->
+<header>
+    <%- include('partials/header'); %>
+</header>
+
+<!-- About me section-->
+<section class="page-section bg-light" id="team">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">About Me</h2>
+            <h3 class="section-subheading text-muted"></h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="team-member">
+                    <img class="mx-auto rounded-circle" src="images/perfilnew.png" alt="" />
+                    <h4>Victor Chaparro</h4>
+                    <p class="text-muted">BI & Analytics Consultant</p>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/victor-manuel-chaparro-07792752/" target="blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+
+            </div>
+            <div class="col-lg-8">
+                <div class="col-lg-10 "><p class="large text-muted">An enthusiastic and dedicated professional with over 13 years experience in Business Intelligence & Analytics, transforming data into knowledge and actionable insights.
+                    <br><br>
+                    Committed and results-oriented who consistently offers innovative solutions focused in process improvement based in technology platforms such as, IBM Cognos, Tableau, Power BI, Microsoft, etc. 
+                    <br><br>
+                    Combines a technical and business approach with excellent interpersonal skills to communicate and perform at all levels on the company.
+                    </p></div>
+                    <center><a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/images/resume.pdf" target="blank">More...</a></center>
+            </div>
+        </div>
+        
+    </div>
+</section>
+<!-- including footer partial-->
+<footer>
+    <%- include('partials/footer'); %>
+</footer>
+
+</body>
+</html>
