@@ -1,11 +1,3 @@
-/* 
-* Index js
-* Created by Victor Chaparro
-* Studen ID: 301140944
-* Oct - 05 - 2020
-* This js file manage all the different routes
-*/
-
 var express = require('express');
 var router = express.Router();
 
@@ -16,27 +8,28 @@ router.get('/', function(req, res) {
 
 /* GET home page. */
 router.get('/home', function(req, res, next) {
-  res.render('index');
+  res.render('index', { title: 'Home'});
 });
 
 /* GET About Us page. */
 router.get('/about', function(req, res, next) {
-  res.render('about');
+  res.render('about', { title: 'About'});
 });
 
 /* GET Products page. */
 router.get('/services', function(req, res, next) {
-  res.render('services');
+  res.render('services', { title: 'Services'});
 });
 
 /* GET Services page. */
 router.get('/projects', function(req, res, next) {
-  res.render('projects');
+  res.render('projects', { title: 'Services'});
 });
 
 /* GET Contact Us page. */
 router.get('/contact', function(req, res, next) {
-  res.render('contact');
+  res.render('contact', { title: 'Contact'});
 });
+/* GET Contact Us page. */
 
 module.exports = router;

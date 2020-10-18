@@ -1,0 +1,82 @@
+
+<!--
+* login.ejs 
+* Created by Victor Chaparro
+* Studen ID: 301140944
+* Oct - 05 - 2020
+* This section includes a functinal login form 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- including head partial-->
+    <%- include('partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <!-- including header partial-->
+    <%- include('partials/header'); %>
+</header>
+<!-- Contact Us section-->
+<main>
+    <div class="container">
+        <br><br>
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase"><%- title %></h2>
+        </div>
+        <br><br>
+        <div class="row">
+            <!-- Form -->
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/add" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="contactname" placeholder="Insert the contact name" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="contactnumber" placeholder="Insert the contact number" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="email" placeholder="Insert the contact email" class="form-control">
+                            </div>
+                            <div class="form-group">    
+                                <button type="submit" class="btn btn-secondary btn-block">Add new contact</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <table class="table table-bordered table-striped table-hover">
+                    <!-- Header Row -->
+                    <tr>
+                        <th class="text-center">Contact Name</th>
+                        <th class="text-center">Contact Number</th>
+                        <th class="text-center">Email</th>
+                    </tr>
+    
+                    <!-- Repeatable Template  Row-->
+                    <% for(let count = 0; count < contactlist.length; count++) { %>
+                        <tr>
+                            <td class="text-center"><%- contactlist[count].name %></td>
+                            <td class="text-center"><%- contactlist[count].contactnumber %></td>
+                            <td class="text-center"><%- contactlist[count].email %></td>
+                        </tr>
+                    <% }%>
+                </table> 
+            </div>
+        </div>
+
+    </div>
+    <br><br>
+</main>
+
+<footer>
+    <!-- including footer partial-->
+    <%- include('partials/footer'); %>
+</footer>
+
+</body>
+</html>

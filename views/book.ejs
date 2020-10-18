@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- including head partial-->
+    <%- include('partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <!-- including header partial-->
+    <%- include('partials/header'); %>
+</header>
+
+<!-- Book List-->
+<main class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-ml8">
+            <h1><%- title %></h1>
+            <br>
+            <table class="table table-bordered table-striped table-hover">
+                <!-- Header Row -->
+                <tr>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Author</th>
+                    <th class="text-center">Published</th>
+                    <th class="text-center">Description</th>
+                    <th class="text-center">Price</th>
+                </tr>
+
+                <!-- Repeatable Template  Row-->
+                <% for(let count = 0; count < BookList.length; count++) { %>
+                    <tr>
+                        <td class="text-center"><%- BookList[count].name %></td>
+                        <td class="text-center"><%- BookList[count].author %></td>
+                        <td class="text-center"><%- BookList[count].published %></td>
+                        <td class="text-center"><%- BookList[count].description %></td>
+                        <td class="text-center"><%- BookList[count].price %></td>
+                    </tr>
+                <% }%>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <!-- including footer partial-->
+        <%- include('partials/footer'); %>
+    </footer>
+    
+    </body>
+    </html>
