@@ -17,11 +17,11 @@ module.exports.displayAboutPage = (req, res, next) => {
 }
 
 module.exports.displayServicesPage = (req, res, next) => {
-    res.render('Services', {title: "Services", displayName: req.user ? req.user.displayName : ''});
+    res.render('services', {title: "Services", displayName: req.user ? req.user.displayName : ''});
 }
 
 module.exports.displayProjectsPage = (req, res, next) => {
-    res.render('Projects', {title: "Projects", displayName: req.user ? req.user.displayName : ''});
+    res.render('projects', {title: "Projects", displayName: req.user ? req.user.displayName : ''});
 }
 
 module.exports.displayContactPage = (req, res, next) => {
