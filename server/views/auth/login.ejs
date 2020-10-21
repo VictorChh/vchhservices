@@ -1,0 +1,72 @@
+
+<!--
+* auth/login.ejs 
+* Created by Victor Chaparro
+* Studen ID: 301140944
+* Oct - 21 - 2020
+* This section includes a functional form to login
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- including head partial-->
+    <%- include('../partials/head.ejs'); %>
+</head>
+<body class="container">
+
+<header>
+    <!-- including header partial-->
+    <%- include('../partials/header.ejs'); %>
+</header>
+<!-- Contact Us section-->
+<main>
+    <div class="container">
+        <!-- Message Area -->
+        <% if(message.lenght > 0) { %>
+            <div class="alert alert-danger">
+                <% message %>
+            </div>
+        <% }%>
+        <br><br>
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase"><%- title %></h2>
+        </div>
+        <br><br>
+        <div class="row">
+            <!-- Form -->
+            <div class="offset-md-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="" method="POST" autocomplete="off">
+                            <div class="form-group">
+                                <label for="username">User name:</label>
+                                <input type="text" id="username" name="username" placeholder="Insert the user name" class="form-control" required autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactnumber">Password:</label>
+                                <input type="password" id="password" name="password" placeholder="Insert the password" class="form-control" required>
+                                or
+                                <a href="/register">Register here</a>
+                            </div>
+                            <div class="form-group">    
+                                <button type="submit" class="btn btn-secondary"><i class="fas fa-edit"></i> Login</button>   
+                                <a href="/" class="btn btn-secondary"><i class="fas fa-undo"></i> Cancel</a>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br><br>
+</main>
+
+<footer>
+    <!-- including footer partial-->
+    <%- include('../partials/footer.ejs'); %>
+</footer>
+
+</body>
+</html>

@@ -5,6 +5,13 @@ let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
+//Adding modules for authentication
+let session = require('express-session');
+let passport = require('passport');
+let passportLocal = require('passport-local');
+let localStrategy = passportLocal.Strategy;
+let flash = require('connect-flash');
+
 //Database setup
 let mongoose = require('mongoose');
 let DB = require('./db.js');
@@ -20,7 +27,6 @@ mongoDB.once('open', ()=>(
 
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
-let booksRouter = require('../routes/books');
 let contactsRouter = require('../routes/contacts');
 
 let app = express();
@@ -36,9 +42,37 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
+// setup express session
+app.use(session({
+  secret: "SomeSecret",
+  SveUninitialized: false,
+  resave: false
+}));
+
+// initialize flahs
+app.use(flash());
+
+// initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+// passport user configuration
+
+// create a user model instance
+let userModel = require('../models/user');
+const { Passport } = require('passport');
+let User = userModel.User;
+
+// implement user authentication strategy
+passport.use(User.createStrategy());
+
+// Serealize and deserealize  the user info
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/book-list', booksRouter);
 app.use('/contactlist', contactsRouter);
 
 // catch 404 and forward to error handler

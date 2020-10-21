@@ -28,10 +28,12 @@
         <br><br>
         <div class="row">
             <div class="offset-md-1 col-md-10">
+                <% if(typeof displayName == 'string' && displayName){ %>
                 <a href="contactlist/add" class="btn btn-dark" role="button">
                     <i class="fas fa-plus-circle"></i> Add a Contact
-                    </a>
-                    <br><br>
+                </a>
+                <% } %>
+                <br><br>
                 <table class="table table-bordered table-striped">
                     <!-- Header Row -->
                     <tr>
@@ -39,8 +41,10 @@
                         <th class="text-center">Contact Name</th>
                         <th class="text-center">Contact Number</th>
                         <th class="text-center">Email</th>
+                        <% if(typeof displayName == 'string' && displayName){ %>
                         <th class="text-center"></th>
                         <th class="text-center"></th>
+                        <% }%>
                     </tr>
     
                     <!-- Repeatable Template  Row-->
@@ -50,16 +54,18 @@
                             <td class="text-center"><%- contactlist[count].name %></td>
                             <td class="text-center"><%- contactlist[count].contactnumber %></td>
                             <td class="text-center"><%- contactlist[count].email %></td>
+                            <% if(typeof displayName == 'string' && displayName){ %>
                             <td class="text-center">
                                 <a href="contactlist/edit/<%- contactlist[count]._id %>"  class="btn btn-secondary" role="button">
                                     <i class="fas fa-pencil-alt"></i> Edit
                                 </a>
                             </td>
                             <td class="text-center">
-                                <a href="contactlist/delete/<%- contactlist[count]._id %>"  class="btn btn-secondary" role="button">
+                                <a href="contactlist/delete/<%- contactlist[count]._id %>"  class="btn btn-secondary btn-delete" role="button">
                                     <i class="fas fa-trash-alt"></i> delete
                                  </a>
                             </td>
+                            <% }%>
                         </tr>
                     <% }%>
                 </table>  

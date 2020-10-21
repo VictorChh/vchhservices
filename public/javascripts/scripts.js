@@ -70,3 +70,28 @@ function showSlides() {
   slides[slideIndex-1].style.display = "block";
   setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
+
+// IIFE -- Immediately Invoked Function Expression
+(function(){
+
+    function Start()
+    {
+        console.log("App Started...");
+
+        let deleteButtons = document.querySelectorAll('.btn-delete');
+        
+        for(button of deleteButtons)
+        {
+            button.addEventListener('click', (event)=>{
+                if(!confirm("Are you sure you want to delete this contact?")) 
+                {
+                    event.preventDefault();
+                    window.location.assign('/contactlist');
+                }
+            });
+        }
+    }
+
+    window.addEventListener("load", Start);
+
+})();

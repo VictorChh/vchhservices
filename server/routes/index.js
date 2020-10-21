@@ -1,39 +1,41 @@
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
+let mongoose = require('mongoose');
+
+let indexController = require('../controllers/index')
 
 /* GET home page. */
-router.get('/', function(req, res) {
-  res.render('index');
-});
+router.get('/', indexController.displayHomePage);
 
 /* GET home page. */
-router.get('/home', function(req, res, next) {
-  res.render('index', { title: 'Home'});
-});
+router.get('/home', indexController.displayHomePage);
 
 /* GET About Us page. */
-router.get('/about', function(req, res, next) {
-  res.render('about', { title: 'About'});
-});
-
-/* GET Products page. */
-router.get('/services', function(req, res, next) {
-  res.render('services', { title: 'Services'});
-});
+router.get('/about', indexController.displayAboutPage);
 
 /* GET Services page. */
-router.get('/projects', function(req, res, next) {
-  res.render('projects', { title: 'Services'});
-});
+router.get('/services', indexController.displayServicesPage);
+
+/* GET Projects page. */
+router.get('/projects', indexController.displayProjectsPage);
 
 /* GET Contact Us page. */
-router.get('/contact', function(req, res, next) {
-  res.render('contact', { title: 'Contact'});
-});
-/* GET Contact Us page. */
+router.get('/contact', indexController.displayContactPage);
 
-router.get('/add', (req, res, next) => {
-  res.render('add', {title: 'Add Contact'})
-});
+// GET route for dislay the Add page - Create opperation
+router.get('/login', indexController.displayLoginPage);
+
+// POST route for processing the Add page - Create opperation
+router.post('/login', indexController.processLoginPage);
+
+// GET route for dislay the Add page - Create opperation
+router.get('/register', indexController.displayRegisterPage);
+
+// POST route for processing the Add page - Create opperation
+router.post('/register', indexController.processRegisterPage);
+
+// GET to perform logout 
+router.get('/logout', indexController.performLogout);
+
 
 module.exports = router;
